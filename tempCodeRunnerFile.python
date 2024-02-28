@@ -1,0 +1,48 @@
+from tkinter import *
+root = Tk()
+def send():
+    send = "You:"+ e.get()
+    text.insert(END,"\n" + send)
+    if(e.get()=='hi'):
+        text.insert(END, "\n" + "Bot: hello")
+    elif(e.get()=='hello'):
+        text.insert(END, "\n" + "Bot: hi")
+    elif (e.get() == 'how are you?'):
+        text.insert(END, "\n" + "Bot: i'm fine and you?")
+    elif (e.get() == "i'm fine too"):
+        text.insert(END, "\n" + "Bot: nice to hear that")
+    elif(e.get()=='am i beautiful'):
+        text.insert(END, "\n" + "Bot: you are indeed beautiful")
+    elif(e.get()=='am i handsome'):
+        text.insert(END, "\n" + "Bot: you are indeed handsome")
+    elif (e.get().lower() == 'what is your name?'):
+        text.insert(END, "\n" + "Bot: I'm just a chatbot, so I don't have a name.")
+    elif e.get().lower() == 'tell me a joke':
+        text.insert(END, "\n" + "Bot: Why don't scientists trust atoms? Because they make up everything!")
+    elif e.get().lower() == 'what is the meaning of life?':
+        text.insert(END, "\n" + "Bot: The meaning of life is a philosophical question. Some say it's 42.")
+    elif 'tell me about yourself' in e.get().lower():
+        text.insert(END, "\n" + "Bot: I am a chatbot created for interactive conversations.")
+    elif 'thank you' in e.get().lower() or 'thanks' in e.get().lower():
+        text.insert(END, "\n" + "Bot: You're welcome!")
+    elif e.get().lower() == 'what is your favorite color?':
+        text.insert(END, "\n" + "Bot: I don't have a favorite color. I'm a text-based entity.")
+    elif e.get().lower() == 'tell me a fun fact':
+        text.insert(END, "\n" + "Bot: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.")
+    elif e.get().lower() == 'recommend a movie':
+        text.insert(END, "\n" + "Bot: It depends on your taste. If you like comedy, I recommend 'Hera pheri.' If you prefer drama, try 'The Shawshank Redemption.'")
+    elif e.get().lower() == 'do you like music?':
+        text.insert(END, "\n" + "Bot: I don't have personal preferences, but I can help you find music recommendations. What genre are you interested in?")
+    elif e.get().lower() == 'who is your creator?':
+        text.insert(END, "\n" + "Bot: I was created by a developer as a simple chatbot for conversational purposes.")
+    elif 'bye' in e.get().lower() or 'goodbye' in e.get().lower():
+        text.insert(END, "\n" + "Bot: Goodbye! Feel free to chat with me anytime.")
+    else:
+        text.insert(END, "\n" + "Bot: Sorry I didnt get it.")
+text = Text(root,bg='blue', fg='white')
+text.grid(row=0,column=0,columnspan=2)
+e = Entry(root,width=80)
+send = Button(root,text='Send',bg='deeppink', fg='white', width=20,command=send).grid(row=1,column=1)
+e.grid(row=1,column=0)
+root.title('KASHIPARA.COM')
+root.mainloop()
